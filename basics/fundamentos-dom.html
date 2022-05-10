@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de DOM con Javascript</title>
+</head>
+<body>
+    <div id="mensaje1">Mensaje 1</div>
+    <div id="mensaje2" class="important">Mensaje 2</div>
+    <div id="mensaje3" class="important">Mensaje 3</div>
+    <ul id="fruits">
+        <li>Manzanas</li>
+        <li>Peras</li>
+        <li>Platanos</li>
+        <li>Melones</li>
+    </ul>
+    <ol>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ol>
+    <script>
+        console.log(document.title);
+        console.log(document.doctype);
+        console.log(document.lastModified);
+
+        let myDiv = document.getElementById("mensaje1");
+        
+        if (myDiv) {
+            myDiv.innerText += " modificado con JavaScript";
+        }
+
+        let myDivs = document.getElementsByTagName("div");
+        console.log(`Hay ${myDivs.length} divs en el documento`);
+
+        if (myDivs.length > 0) {
+            myDivs[1].innerText += " modificado con JavaScript";
+        }
+
+        let importantElements = document.getElementsByClassName("important");
+        console.log(`Hay ${importantElements.length} elementos importantes`);
+
+        let fruits = document.getElementById("fruits");
+        fruits.innerHTML = "";
+
+        let newFruit = document.createElement("li");
+        newFruit.innerText = "Sandia"
+        fruits.appendChild(newFruit);
+
+        newFruit = document.createElement("li");
+        newFruit.innerText = "Mango";
+        fruits.appendChild(newFruit);
+
+        fruits.childNodes.forEach(fruit => {
+            console.log(fruit.innerText);
+        });
+        
+    </script>
+</body>
+</html>
