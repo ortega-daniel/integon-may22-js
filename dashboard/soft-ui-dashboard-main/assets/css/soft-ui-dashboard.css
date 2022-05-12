@@ -21189,7 +21189,7 @@ fieldset:disabled .btn {
 
 .input-group-text {
   position: absolute;
-  z-index: 9999;
+  z-index: 999;
   height: 100%;
   border-right: 0;
   padding-left: 10px;
@@ -22808,7 +22808,7 @@ hr.horizontal.gray-light {
 }
 
 .sidenav {
-  z-index: 9999;
+  z-index: 777;
 }
 
 .sidenav .navbar-brand,

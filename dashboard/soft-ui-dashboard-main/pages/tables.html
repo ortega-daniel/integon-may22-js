@@ -33,9 +33,53 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
+  <!-- Modal -->
+  <div class="modal fade" id="add-author-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add author</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-add-author" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="author-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="author-name" required>
+            </div>
+            <div class="mb-3">
+              <label for="author-picture" class="form-label">Picture</label>
+              <input type="text" class="form-control" id="author-picture" required>
+            </div>
+            <div class="mb-3">
+              <label for="author-email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="author-email" aria-describedby="author-email-help" required>
+              <div id="author-email-help" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="author-position" class="form-label">Position</label>
+              <input type="text" class="form-control" id="author-position" required>
+            </div>
+            <div class="mb-3">
+              <label for="author-position-dtl" class="form-label">Position detail</label>
+              <input type="text" class="form-control" id="author-position-dtl" required>
+            </div>
+            <div class="mb-3">
+              <label for="author-employed-date" class="form-label">Employment date</label>
+              <input type="text" class="form-control" id="author-employed-date" required>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
@@ -364,7 +408,7 @@
                   <h6>Authors table</h6>
                 </div>
                 <div class="col text-end">
-                  <button type="button" id="add-author" class="btn btn-outline-primary">Add author</button>
+                  <button type="button" id="add-author" data-bs-toggle="modal" data-bs-target="#add-author-modal" class="btn btn-outline-primary">Add author</button>
                 </div>
               </div>
             </div>
@@ -381,7 +425,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <!-- <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
@@ -548,7 +592,7 @@
                           Edit
                         </a>
                       </td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
@@ -896,6 +940,7 @@
   </script>
 
   <!-- Authors Script -->
+  <script src="../assets/js/models.js"></script>
   <script src="../assets/js/authors.js"></script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
