@@ -34,7 +34,8 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -408,7 +409,10 @@
                   <h6>Authors table</h6>
                 </div>
                 <div class="col text-end">
-                  <button type="button" id="add-author" data-bs-toggle="modal" data-bs-target="#add-author-modal" class="btn btn-outline-primary">Add author</button>
+                  <button type="button" id="filter-position-All"class="btn btn-outline-primary author-filter">All</button>
+                  <button type="button" id="filter-position-Manager"class="btn btn-outline-primary author-filter">Manager</button>
+                  <button type="button" id="filter-position-Programmer"class="btn btn-outline-primary author-filter">Programmer</button>
+                  <button type="button" id="add-author" data-bs-toggle="modal" data-bs-target="#add-author-modal" class="btn btn-primary">Add author</button>
                 </div>
               </div>
             </div>
@@ -940,8 +944,8 @@
   </script>
 
   <!-- Authors Script -->
-  <script src="../assets/js/models.js"></script>
   <script src="../assets/js/authors.js"></script>
+  <script src="../assets/js/authos-jquery.js"></script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->

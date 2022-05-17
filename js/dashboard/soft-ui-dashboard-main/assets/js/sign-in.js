@@ -36,13 +36,13 @@ btnSignIn.addEventListener("click", () => {
         .then(response => response.json())
         .then(data => {
             if (data.user == null) {
-                cardSignIn.style.display = "block";
-                cardWelcome.style.display = "none";
+                $("#sign-in-card").show();
+                $("#welcome-card").hide();;
                 alert("incorrect credentials");
             } else {
                 spanUsername.innerText = data.user.name;
-                cardSignIn.style.display = "none";
-                cardWelcome.style.display = "block";
+                $("#sign-in-card").hide();
+                $("#welcome-card").show();;
             }
         });
 
