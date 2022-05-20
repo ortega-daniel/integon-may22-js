@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <th>Index</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>ciudad</th>
+    <th>moneda</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of personas | sort: 'nombre':'desc'; index as i">
+      <td>
+        <a [routerLink]="['detallepersonas', p.id]">{{ i + 1 }}</a>
+      </td>
+      <td>{{ p.nombre | uppercase }}</td>
+      <td>{{ p.apellido | uppercase | slice: 2:4 }}</td>
+      <td>{{ p.ciudad | uppercase }}</td>
+      <td>{{ p.moneda | currency: "EUR" }}</td>
+    </tr>
+  </tbody>
+</table>

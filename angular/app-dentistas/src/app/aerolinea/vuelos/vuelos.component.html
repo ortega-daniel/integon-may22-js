@@ -1,0 +1,49 @@
+<div>
+  <div>
+    <table>
+      <thead>
+        <th>No. Vuelo</th>
+        <th>Fecha</th>
+        <th>Horario</th>
+        <th>Origen</th>
+        <th>Destino</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vuelo of vuelos">
+          <td>{{ vuelo.noVuelo }}</td>
+          <td>{{ vuelo.fecha }}</td>
+          <td>{{ vuelo.horario }}</td>
+          <td>{{ vuelo.origen }}</td>
+          <td>{{ vuelo.destino }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label>No. Vuelo</label>
+        <input type="text" name="noVuelo" [(ngModel)]="noVuelo" />
+      </div>
+      <div>
+        <label>Fecha</label>
+        <input type="text" name="fecha" [(ngModel)]="fecha" />
+      </div>
+      <div>
+        <label>Horario</label>
+        <input type="text" name="horario" [(ngModel)]="horario" />
+      </div>
+      <div>
+        <label>Origen</label>
+        <input type="text" name="origen" [(ngModel)]="origen" />
+      </div>
+      <div>
+        <label>Destino</label>
+        <input type="text" name="destino" [(ngModel)]="destino" />
+      </div>
+      <div>
+        <button type="submit">Agregar</button>
+      </div>
+    </form>
+  </div>
+</div>
